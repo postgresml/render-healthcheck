@@ -17,8 +17,16 @@ from datadog_api_client.v2.model.metric_series import MetricSeries
 
 local_pgml = "postgres:///pgml"
 
+def dd_api_key():
+    key = os.environ.get("DD_API_KEY")
+
+    if key is None:
+        print("Datadog API key is not set")
+
+    return key
+
 app = FastAPI()
-configuration = Configuration(api_key=os.environ.get("DD_API_KEY"))
+configuration = Configuration(api_key=dd_api_key())
 
 
 @contextmanager
