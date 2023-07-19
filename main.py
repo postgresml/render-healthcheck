@@ -18,7 +18,7 @@ from datadog_api_client.v2.model.metric_series import MetricSeries
 local_pgml = "postgres:///pgml"
 
 app = FastAPI()
-configuration = Configuration(api_key=os.environ.get("DATADOG_API_KEY"))
+configuration = Configuration(api_key=os.environ.get("DD_API_KEY"))
 
 
 @contextmanager
