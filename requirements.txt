@@ -1,2 +1,3 @@
 fastapi[all]
 pgml==0.8.0
+datadog-api-client
